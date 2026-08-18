@@ -42,6 +42,16 @@ The skill can also handle:
 
 Markdown is the canonical format because it is portable, reviewable, easy to translate, and GitHub-friendly. A complete report does not require HTML. HTML is an optional companion when a long report, timeline, visual comparison, print layout, or interactive presentation makes the result easier to understand.
 
+To create the optional HTML companion after validating the Markdown:
+
+```bash
+python skills/source-grounded-research/scripts/render_report.py \
+  examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md \
+  --output examples/cross-system-evidence-chains/uk-online-safety-policy-chain.html
+```
+
+The renderer is standard-library-only, self-contained, print-friendly, and JavaScript-free. Keep the `.md` file as the source of truth.
+
 Typical outputs include:
 
 - an executive summary and direct answer;
@@ -74,6 +84,7 @@ The repository includes a reproducible example on public libraries and digital a
 - [the benchmark prompt](examples/public-libraries-digital-access/prompt.md).
 - [a full current-affairs reference report](examples/reference-report-eu-ai-act-2026-08.md).
 - [a UK policy implementation chain](examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md).
+- [the same policy chain as optional HTML](examples/cross-system-evidence-chains/uk-online-safety-policy-chain.html).
 - [a UK news provenance chain](examples/cross-system-evidence-chains/uk-tiktok-investigation-news-chain.md).
 
 The baseline is intentionally illustrative and should not be treated as a deliverable. The enhanced report shows the expected evidence discipline.

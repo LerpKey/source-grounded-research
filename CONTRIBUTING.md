@@ -15,6 +15,7 @@ Thank you for helping improve Source-Grounded Research.
 - Keep all skill instructions and user-facing documentation in English.
 - Keep the core `SKILL.md` concise and move detailed variants into `references/`.
 - Include or update a fixture when changing validation scripts.
+- If changing the HTML renderer, regenerate the committed HTML demo from its Markdown source and verify both the Markdown and generated HTML links.
 - Run the package validator and report checks locally.
 - Do not add secrets, private source material, or downloaded executables.
 - Explain whether the change affects triggering, evidence quality, output structure, or tooling.

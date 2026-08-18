@@ -66,6 +66,7 @@ Use bundled scripts when they reduce repetitive work:
 - `scripts/check_links.py` scans and optionally verifies report links.
 - `scripts/validate_report.py` checks report structure, evidence markers, placeholders, and common unsupported-claim patterns.
 - `scripts/wrap_urls.py` turns accidental bare URLs into Markdown autolinks.
+- `scripts/render_report.py` renders a validated Markdown report as a standalone, print-friendly HTML companion with inline CSS and no JavaScript.
 
 Read [tool-fallbacks.md](references/tool-fallbacks.md) when browsing, fetching, or document tools are unavailable.
 
@@ -129,7 +130,9 @@ Choose the chain form that matches the question:
 
 ### 7. Write the report
 
-Use Markdown as the canonical output. It is portable, readable in GitHub and documentation systems, easy to diff, and not dependent on a browser or CSS. Offer HTML as an optional companion when the user requests it or when a long report, timeline, visual comparison, print layout, or interactive presentation materially improves comprehension. Do not require HTML for a complete report.
+Use Markdown as the canonical output. It is portable, readable in GitHub and documentation systems, easy to diff, and not dependent on a browser or CSS. Offer HTML as an optional companion when the user requests it or when a long report, timeline, visual comparison, or print layout materially improves comprehension. Do not require HTML for a complete report.
+
+When HTML is requested, finish and validate the Markdown first, then render it with `scripts/render_report.py`. Deliver both files and state that the Markdown is authoritative. Do not hand-edit the HTML to add claims, citations, or conclusions that are absent from the Markdown. The bundled renderer is presentation-only, uses the Python standard library, escapes source text, permits only HTTP(S) links, and adds no JavaScript.
 
 Every material claim should have an inline citation close to the sentence or table cell it supports. Use the source’s descriptive title as the link text, not a bare URL. Keep a compact source ledger when the report has more than a few sources.
 

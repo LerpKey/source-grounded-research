@@ -28,6 +28,7 @@ python skills/source-grounded-research/scripts/check_links.py examples/cross-sys
 python skills/source-grounded-research/scripts/check_links.py examples/cross-system-evidence-chains/uk-tiktok-investigation-news-chain.md --verify
 python skills/source-grounded-research/scripts/validate_report.py examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md --strict --chain-type policy
 python skills/source-grounded-research/scripts/validate_report.py examples/cross-system-evidence-chains/uk-tiktok-investigation-news-chain.md --strict --chain-type news
+python skills/source-grounded-research/scripts/render_report.py examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md --output /tmp/uk-online-safety-policy-chain.html
 ```
 
 For offline fixtures, omit `--verify`. A failed live link is a report limitation to investigate, not a reason to silently replace the source with an unverified summary.
