@@ -6,13 +6,18 @@ Source-Grounded Research is an open Agent Skill for fact-finding, market researc
 
 ## Install
 
-Install the skill with the open skills CLI:
+Project name: **Source-Grounded Research**
+
+- Recommended repository name: `source-grounded-research`
+- Skill ID: `source-grounded-research`
+
+After publishing the repository to GitHub, replace `YOUR_GITHUB_USERNAME` with the account or organization that owns it:
 
 ```bash
-npx skills add OWNER/REPOSITORY --skill source-grounded-research
+npx skills add YOUR_GITHUB_USERNAME/source-grounded-research --skill source-grounded-research
 ```
 
-For Codex, Claude Code, Cursor, GitHub Copilot, and other compatible agents, use the same repository source and select the target agent when prompted. The exact command depends on the final GitHub owner and repository name.
+For Codex, Claude Code, Cursor, GitHub Copilot, and other compatible agents, use the same repository source and select the target agent when prompted. The skill ID stays `source-grounded-research` even if you choose a different repository name.
 
 ## Choose the depth
 

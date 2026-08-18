@@ -61,7 +61,7 @@ Do not collapse these stages:
 - A consultation or planned milestone is not an implemented rule.
 - A reported improvement is not proof that the policy caused the improvement unless the evaluation supports that causal claim.
 
-For non-UK systems, replace the labels with the local equivalents. In a Chinese policy chain, the nodes may include national, provincial, municipal, and county documents. In the UK, the relevant structure may instead involve Parliament, a department, a regulator, devolved administrations, local authorities, courts, and regulated entities. The method follows function and authority, not a fixed national hierarchy.
+For any jurisdiction, replace the labels with the local equivalents. The relevant structure may involve a legislature, department, regulator, regional authority, local implementer, court, funding body, or regulated entity. The method follows function and authority, not a fixed national hierarchy.
 
 ## News provenance chain
 
