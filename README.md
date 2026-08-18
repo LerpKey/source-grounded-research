@@ -46,8 +46,8 @@ To create the optional HTML companion after validating the Markdown:
 
 ```bash
 python skills/source-grounded-research/scripts/render_report.py \
-  examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md \
-  --output examples/cross-system-evidence-chains/uk-online-safety-policy-chain.html
+  path/to/validated-report.md \
+  --output path/to/validated-report.html
 ```
 
 The renderer is standard-library-only, self-contained, print-friendly, and JavaScript-free. Keep the `.md` file as the source of truth.
@@ -74,20 +74,22 @@ Use a chain when the answer depends on how authority, evidence, or a claim trave
 
 The skill records the role and legal/media status of each node. Repeated articles that share the same source are treated as reach, not independent confirmation.
 
-## Examples
+## Validation snapshot
 
-The repository includes a reproducible example on public libraries and digital access:
+The repository keeps the release package small. Full reports, prompts, comparisons, HTML demos, and benchmark artifacts are maintained locally and are intentionally excluded from Git.
 
-- [baseline without the skill](examples/public-libraries-digital-access/without-skill.md);
-- [evidence-first report with the skill](examples/public-libraries-digital-access/with-skill.md);
-- [side-by-side comparison](examples/public-libraries-digital-access/comparison.md);
-- [the benchmark prompt](examples/public-libraries-digital-access/prompt.md).
-- [a full current-affairs reference report](examples/reference-report-eu-ai-act-2026-08.md).
-- [a UK policy implementation chain](examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md).
-- [the same policy chain as optional HTML](examples/cross-system-evidence-chains/uk-online-safety-policy-chain.html).
-- [a UK news provenance chain](examples/cross-system-evidence-chains/uk-tiktok-investigation-news-chain.md).
+Latest local validation included:
 
-The baseline is intentionally illustrative and should not be treated as a deliverable. The enhanced report shows the expected evidence discipline.
+| Check | Result |
+|---|---|
+| English forward tests | 3 focused tests: EU AI Act, Artemis II, libraries vs. community broadband |
+| Chinese forward tests | 3 focused tests: Artemis II, EU AI Act, AI-industry claim verification |
+| Policy-chain example | UK Online Safety Act: statute → Ofcom guidance and duties → enforcement → monitoring |
+| News-chain example | Ofcom/TikTok investigation: official event → Reuters/Guardian coverage → company response → unresolved status |
+| HTML smoke test | Markdown rendered to standalone, responsive, JavaScript-free HTML; evidence links preserved |
+| Package checks | Skill format, Python compilation, strict report checks, chain checks, and live link checks passed |
+
+These results are a release snapshot, not a promise that future research will always produce the same conclusions. Re-run the local checks after changing the skill.
 
 ## Compatibility and boundaries
 
@@ -95,21 +97,21 @@ The package follows the open Agent Skills format: a `SKILL.md` file plus optiona
 
 If an agent cannot browse or inspect a source, the skill must say so. It must never invent citations or claim that a link was verified when it was not.
 
-External pages and downloaded files are treated as untrusted content. The skill does not run downloaded executables, expose secrets, or take external actions without authorization. See [SECURITY.md](SECURITY.md).
+External pages and downloaded files are treated as untrusted content. The skill does not run downloaded executables, expose secrets, or take external actions without authorization. These boundaries are documented in `SKILL.md`.
 
 ## Validate locally
 
 ```bash
-python skills/source-grounded-research/scripts/check_links.py examples/public-libraries-digital-access/with-skill.md --verify
-python skills/source-grounded-research/scripts/validate_report.py examples/public-libraries-digital-access/with-skill.md --strict
+python skills/source-grounded-research/scripts/check_links.py path/to/report.md --verify
+python skills/source-grounded-research/scripts/validate_report.py path/to/report.md --strict
 # For a policy or news chain, add --chain-type policy or --chain-type news.
 ```
 
-The full evaluation process is documented in [evals/runbook.md](evals/runbook.md).
+The full evaluation materials remain local during development so the public package is not padded with test reports or prompt artifacts.
 
 ## Contributing
 
-Contributions are welcome, especially new source-quality patterns, regression prompts, fixture-based tests, and examples that demonstrate genuine improvements. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
+Contributions are welcome, especially new source-quality patterns, regression prompts, fixture-based tests, and examples that demonstrate genuine improvements. Keep test artifacts and private research outputs out of the release package.
 
 If this skill helps you produce more trustworthy research, please consider starring the repository. A star is useful feedback and helps other researchers discover the project; it is not a substitute for testing or reviewing the work.
 

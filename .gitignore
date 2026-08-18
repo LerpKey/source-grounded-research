@@ -6,3 +6,10 @@ evidence/
 downloads/
 *.tmp
 *.log
+
+# Local-only validation artifacts; do not publish these with the skill.
+/examples/
+/evals/
+/tests/
+/CONTRIBUTING.md
+/SECURITY.md
