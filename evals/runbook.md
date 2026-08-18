@@ -23,6 +23,11 @@ From the repository root:
 ```bash
 python skills/source-grounded-research/scripts/check_links.py examples/public-libraries-digital-access/with-skill.md --verify
 python skills/source-grounded-research/scripts/validate_report.py examples/public-libraries-digital-access/with-skill.md --strict
+# For chain-specific examples, inspect the chain judgment and run the same checks:
+python skills/source-grounded-research/scripts/check_links.py examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md --verify
+python skills/source-grounded-research/scripts/check_links.py examples/cross-system-evidence-chains/uk-tiktok-investigation-news-chain.md --verify
+python skills/source-grounded-research/scripts/validate_report.py examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md --strict --chain-type policy
+python skills/source-grounded-research/scripts/validate_report.py examples/cross-system-evidence-chains/uk-tiktok-investigation-news-chain.md --strict --chain-type news
 ```
 
 For offline fixtures, omit `--verify`. A failed live link is a report limitation to investigate, not a reason to silently replace the source with an unverified summary.

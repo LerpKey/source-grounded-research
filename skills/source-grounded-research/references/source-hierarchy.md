@@ -12,6 +12,8 @@ Use the strongest source that directly answers the claim. “Primary” does not
 
 Use lower-level sources for discovery, context, or triangulation. Do not use them as the sole support for high-impact claims when a primary source is available.
 
+When mapping a chain, rank sources for the role they play rather than assigning one global rank. A statute may be strongest for legal authority, a regulator notice for an investigation opening, a provider statement for the provider’s position, and a reputable outlet for publication history. A source can be authoritative for one node and weak for another.
+
 ## Adapt the hierarchy to the topic
 
 - **Policy and regulation:** statute or regulation → agency guidance → implementation records → reputable analysis.
@@ -19,6 +21,7 @@ Use lower-level sources for discovery, context, or triangulation. Do not use the
 - **Science and medicine:** original study → systematic review or consensus guidance → institutional summary → journalism.
 - **Products and technology:** vendor documentation or release notes → reproducible test or benchmark → independent review.
 - **Public-interest questions:** official statistics and original surveys → methodology-aware research → reputable reporting → commentary.
+- **News provenance:** underlying record, data, image, or attributable statement → first-party or official release → independently reported coverage → analysis and commentary. Track whether later coverage is syndicated or shares the same source.
 
 ## Search sequence
 
@@ -44,4 +47,3 @@ Record this minimum metadata for every source used in a material claim:
 | Accessed | Date inspected |
 | Evidence | Passage, table, figure, or data field used |
 | Limits | Scope, method, uncertainty, or conflict of interest |
-

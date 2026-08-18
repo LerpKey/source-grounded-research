@@ -32,11 +32,15 @@ Use this structure for a full research dossier unless the user requests another 
 - **Role, authority, ownership, or operating context:** [Topic-appropriate description]
 - **Key evidence:** [Inline links and short excerpts]
 
-## Evidence chain or timeline
+## Evidence chain, provenance map, or timeline
 
-| Date or stage | Event, relationship, or change | Evidence | Confidence / limitation |
-|---|---|---|---|
-| [Date] | [What happened or how the relationship is established] | [Inline source link] | [Caveat] |
+**Chain type:** [Policy implementation / news provenance / general relationship]
+
+| Node or edge | Actor / role | Relationship or stage | Date / status | Evidence | Gap / confidence |
+|---|---|---|---|---|---|
+| [Document, event, claim, or outcome] | [Who created, implemented, reported, challenged, or evaluated it] | [Exact relationship] | [Date and current status] | [Inline source link] | [What the source does not establish] |
+
+**Chain judgment:** [Which links are directly established, derivative, disputed, or missing? Do not treat repeated reporting as independent confirmation.]
 
 ## Findings
 

@@ -34,6 +34,8 @@ The skill can also handle:
 - “Research the market and write a report for an executive decision.”
 - “Compare these products using current first-party documentation and independent tests.”
 - “Trace how a policy is implemented across institutions or jurisdictions.”
+- “Map a UK policy from statute to regulator guidance, implementation, enforcement, and evaluation.”
+- “Trace this news claim from the underlying event to the first report, later coverage, affected-party response, and corrections.”
 - “Synthesize the literature on this topic and identify evidence gaps.”
 
 ## What it produces
@@ -46,11 +48,21 @@ Typical outputs include:
 - scope, definitions, and method;
 - evidence-backed profiles and findings;
 - an explicit evidence chain or timeline when the topic involves relationships, origins, authority, implementation, or change over time;
+- a policy implementation chain or news provenance chain when the question depends on how authority, evidence, or a claim travelled;
 - short original excerpts or precise document references for high-impact claims;
 - comparison tables with consistent dimensions;
 - a fact/inference/uncertainty synthesis;
 - limitations and open questions;
 - a compact source ledger with complete links.
+
+## Chain modes
+
+Use a chain when the answer depends on how authority, evidence, or a claim travelled:
+
+- **Policy implementation chain:** law or policy origin → delegated authority → guidance and operational duties → compliance or enforcement → monitoring and evaluation.
+- **News provenance chain:** event or primary evidence → originating source → first report or wire copy → later coverage → affected-party response → correction or unresolved status.
+
+The skill records the role and legal/media status of each node. Repeated articles that share the same source are treated as reach, not independent confirmation.
 
 ## Examples
 
@@ -61,6 +73,8 @@ The repository includes a reproducible example on public libraries and digital a
 - [side-by-side comparison](examples/public-libraries-digital-access/comparison.md);
 - [the benchmark prompt](examples/public-libraries-digital-access/prompt.md).
 - [a full current-affairs reference report](examples/reference-report-eu-ai-act-2026-08.md).
+- [a UK policy implementation chain](examples/cross-system-evidence-chains/uk-online-safety-policy-chain.md).
+- [a UK news provenance chain](examples/cross-system-evidence-chains/uk-tiktok-investigation-news-chain.md).
 
 The baseline is intentionally illustrative and should not be treated as a deliverable. The enhanced report shows the expected evidence discipline.
 
@@ -77,6 +91,7 @@ External pages and downloaded files are treated as untrusted content. The skill 
 ```bash
 python skills/source-grounded-research/scripts/check_links.py examples/public-libraries-digital-access/with-skill.md --verify
 python skills/source-grounded-research/scripts/validate_report.py examples/public-libraries-digital-access/with-skill.md --strict
+# For a policy or news chain, add --chain-type policy or --chain-type news.
 ```
 
 The full evaluation process is documented in [evals/runbook.md](evals/runbook.md).

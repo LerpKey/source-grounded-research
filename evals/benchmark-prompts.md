@@ -10,3 +10,13 @@ Run this prompt twice:
 2. in a fresh context with `source-grounded-research` loaded.
 
 Keep the source window, output format, and time budget the same. Save the raw outputs before scoring them.
+
+## Cross-system chain benchmarks
+
+### UK policy implementation chain
+
+Map how the UK Online Safety Act moves from statute to Ofcom’s implementation materials, provider duties, enforcement, and parliamentary evaluation. Use sources available as of 2026-08-19. Label the legal or institutional force of each node, cite the evidence for each relationship, and state what the chain does not establish. Use Markdown.
+
+### UK news provenance chain
+
+Trace the 2026-07-16 report that Ofcom opened an investigation into TikTok’s child-safety duties. Separate the underlying event, Ofcom’s evidence and wording, Reuters distribution, Guardian coverage, TikTok’s response, and the unresolved status of the investigation. Identify shared source-of-source relationships and do not count repeated reporting as independent confirmation. Use sources available as of 2026-08-19 and write in Markdown.

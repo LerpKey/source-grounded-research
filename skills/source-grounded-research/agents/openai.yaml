@@ -1,7 +1,7 @@
 interface:
   display_name: "Source-Grounded Research"
-  short_description: "Research with claim-level evidence and clear uncertainty"
-  default_prompt: "Use $source-grounded-research to investigate this question and write an auditable report with inline evidence links."
+  short_description: "Trace claims through sources, institutions, and reporting chains"
+  default_prompt: "Use $source-grounded-research to investigate this question, map any relevant policy or news evidence chain, and write an auditable report with inline evidence links."
 
 policy:
   allow_implicit_invocation: true

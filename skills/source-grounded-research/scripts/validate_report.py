@@ -18,11 +18,45 @@ FACT_LABELS = (
     "官方确认", "官方报道", "报道声称", "报道中的直接主张", "页面显示", "可以确认",
 )
 
+CHAIN_RULES = {
+    "policy": {
+        "heading": r"^##\s+.*(?:policy implementation|implementation) chain",
+        "terms": (
+            (r"statutory|legal|binding", "legal or binding force"),
+            (r"regulator|guidance|implementation", "regulator, guidance, or implementation stage"),
+            (r"enforcement|evaluation|scrutiny", "enforcement or evaluation stage"),
+            (r"gap|unknown|not established|limitation", "explicit gap or limitation"),
+        ),
+    },
+    "news": {
+        "heading": r"^##\s+.*(?:news provenance|provenance|news source) chain",
+        "terms": (
+            (r"source|outlet|reported|publication", "source or publication role"),
+            (r"independent|shared|syndicat|same source", "independence or shared-source assessment"),
+            (r"response|correction|update|status", "response, correction, update, or status"),
+            (r"gap|unknown|not established|limitation|unresolved", "explicit gap or unresolved claim"),
+        ),
+    },
+    "generic": {
+        "heading": r"^##\s+.*(?:evidence|relationship|provenance|implementation).*chain",
+        "terms": (
+            (r"node|actor|relationship|edge|stage", "node or relationship vocabulary"),
+            (r"source|evidence", "source or evidence field"),
+            (r"gap|unknown|not established|limitation", "explicit gap or limitation"),
+        ),
+    },
+}
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("file", type=Path)
     parser.add_argument("--strict", action="store_true", help="Treat heuristic warnings as failures")
+    parser.add_argument(
+        "--chain-type",
+        choices=sorted(CHAIN_RULES),
+        help="Require an explicit evidence-chain structure for a policy, news, or generic chain report",
+    )
     args = parser.parse_args()
     text = args.file.read_text(encoding="utf-8", errors="replace")
     issues: list[tuple[str, int, str]] = []
@@ -33,6 +67,16 @@ def main() -> int:
         issues.append(("WARN", 1, "no conclusion-first summary section found"))
     if not re.search(r"^##\s+.*(?:Sources|References|来源|参考资料|来源台账)", text, re.I | re.M):
         issues.append(("WARN", 1, "no Sources or References section found"))
+
+    if args.chain_type:
+        rules = CHAIN_RULES[args.chain_type]
+        if not re.search(rules["heading"], text, re.I | re.M):
+            issues.append(("ERROR", 1, f"missing {args.chain_type} evidence-chain heading"))
+        for pattern, label in rules["terms"]:
+            if not re.search(pattern, text, re.I):
+                issues.append(("ERROR", 1, f"chain missing {label}"))
+        if not LINK_RE.search(text):
+            issues.append(("ERROR", 1, "chain report has no clickable evidence link"))
 
     for line_no, line in enumerate(text.splitlines(), start=1):
         if PLACEHOLDER_RE.search(line):

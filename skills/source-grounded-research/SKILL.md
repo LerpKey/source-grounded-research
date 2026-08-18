@@ -16,6 +16,7 @@ Write for an international audience in clear, neutral English. Explain local ins
 - Prefer primary sources: official records, original datasets, peer-reviewed research, standards, regulatory filings, and first-party documentation. Use high-quality secondary sources to provide context or triangulation.
 - Open the original source before relying on a search snippet, repost, summary, or citation copied from another page.
 - Record the exact URL, title, publisher, publication date when available, access date, and the claim supported by each source.
+- When the topic involves institutions, implementation, or changing public claims, map the relationships between sources and actors instead of presenting a flat source list.
 - Distinguish `Verified fact`, `Synthesis`, `Inference`, `Viewpoint`, and `Unknown` in the working notes and final report.
 - Never invent a citation, imply that a link was checked when it was not, or silently upgrade an inference into a fact.
 - Prefer a smaller set of well-supported claims over a broad report padded with weak evidence.
@@ -47,6 +48,8 @@ Choose sources by claim type rather than searching for a single “best” page:
 
 For source-selection detail, read [source-hierarchy.md](references/source-hierarchy.md).
 
+For policy implementation chains and news-provenance chains, read [evidence-chains.md](references/evidence-chains.md).
+
 ### 3. Collect and inspect evidence
 
 Use the strongest available search or browser capability. For each candidate source:
@@ -76,6 +79,15 @@ Before drafting, map material claims to sources. A useful internal table is:
 
 Do not treat “the source discusses the topic” as support. The source must support the wording and scope of the claim actually written.
 
+When a chain is material to the answer, add a second map before drafting:
+
+- **Nodes:** documents, institutions, people, events, platforms, decisions, or outcomes;
+- **Edges:** enacted by, delegated to, operationalized by, reported by, quoted from, challenged by, corrected by, or evaluated by;
+- **Node status:** law, regulation, guidance, proposal, implementation action, enforcement action, report, allegation, response, or outcome;
+- **Evidence state:** direct source, derivative source, independent corroboration, disputed, or missing.
+
+Do not force every chain into a geographic hierarchy. A UK policy may run from Parliament to a regulator to regulated services and then to enforcement or evaluation. A news story may run from an event and primary evidence through a wire service, multiple outlets, an affected party response, and later correction. These are different relationships and must be labeled as such.
+
 For the claim taxonomy and scoring rules, read [evidence-rubric.md](references/evidence-rubric.md).
 
 ### 5. Synthesize cautiously
@@ -100,7 +112,7 @@ For a full dossier, include:
 2. conclusion summary with direct answers to the user’s questions;
 3. method, definitions, and source-selection logic;
 4. a profile for each entity, option, product, market, policy, or claim being investigated;
-5. an evidence chain showing origin, development, role, ownership, authority, implementation, or other topic-relevant relationships;
+5. an evidence chain showing origin, development, role, ownership, authority, implementation, publication, correction, or other topic-relevant relationships;
 6. original excerpts, data points, or document references for high-impact claims;
 7. comparison tables, timelines, or decision matrices when they clarify relationships;
 8. synthesis, implications, recommendations, and clearly labeled inferences;
@@ -109,11 +121,19 @@ For a full dossier, include:
 
 Adapt the profile and evidence-chain sections to the subject. For example, an organization may need identity, ownership, mandate, history, and current role; a product comparison may need specifications, pricing date, test conditions, and support lifecycle; a market study may need definitions, methodology, segments, competitors, and forecast assumptions.
 
+Choose the chain form that matches the question:
+
+- **Policy implementation chain:** legal origin → delegated authority → guidance or secondary rules → operational duties → compliance/enforcement → monitoring or evaluation. Mark the legal force of every stage.
+- **News provenance chain:** event or underlying evidence → originating institution/person → first report or wire copy → independent coverage → affected-party response → correction/update → unresolved claim. Record shared source-of-source links so syndicated repetition is not counted as independent confirmation.
+- **General relationship chain:** use explicit node and edge labels when the topic is not a policy or news story. A sequence of dates alone is not evidence of causation.
+
 ### 7. Write the report
 
 Use Markdown as the canonical output. It is portable, readable in GitHub and documentation systems, easy to diff, and not dependent on a browser or CSS. Offer HTML as an optional companion when the user requests it or when a long report, timeline, visual comparison, print layout, or interactive presentation materially improves comprehension. Do not require HTML for a complete report.
 
 Every material claim should have an inline citation close to the sentence or table cell it supports. Use the source’s descriptive title as the link text, not a bare URL. Keep a compact source ledger when the report has more than a few sources.
+
+For a chain, cite the evidence for both the node and the relationship. If a source proves that two events occurred but not that one caused the other, state the relationship as sequence or association rather than causation.
 
 Use [report-template.md](references/report-template.md) for the default structure.
 

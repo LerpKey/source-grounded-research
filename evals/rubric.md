@@ -7,6 +7,7 @@ Score each report from 0 to 4 for every dimension. Use a fresh context for the b
 | Source quality | No usable sources | Some credible secondary sources | Primary/authoritative sources match the claims |
 | Claim traceability | Claims cannot be traced | Some claims have a source list | Every material claim has a nearby source link |
 | Citation correctness | Links are missing or wrong | Links are broadly relevant | Sources directly support the wording and scope |
+| Chain integrity | Relationships are implied or conflated | Some nodes and relationships are mapped | Nodes, edge types, legal/media roles, and missing links are explicit |
 | Coverage | Does not answer the question | Answers only obvious parts | Covers the requested questions and key counterpoints |
 | Fact/inference separation | Everything is asserted as fact | Some distinction | Facts, synthesis, inference, viewpoint, and unknown are explicit |
 | Uncertainty handling | No limitations | Generic caveats | Specific gaps, conflicts, and change conditions are stated |
