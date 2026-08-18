@@ -13,7 +13,10 @@ LINK_RE = re.compile(r"\[[^\]]+\]\(https?://[^)\s]+\)|<https?://[^>]+>", re.I)
 BARE_URL_RE = re.compile(r"(?<![<(])https?://[^\s)\]>]+", re.I)
 NUMBER_RE = re.compile(r"(?<![\w])(?:\$|€|£)?\d[\d,.]*(?:\s?%|\s?(?:million|billion|thousand))?", re.I)
 PLACEHOLDER_RE = re.compile(r"\[(?:TBD|TODO|SOURCE NEEDED|CITATION NEEDED|UNKNOWN)\]|\b(?:TBD|TODO|FIXME)\b", re.I)
-FACT_LABELS = ("verified fact", "according to", "reported", "found that", "shows that")
+FACT_LABELS = (
+    "verified fact", "according to", "reported", "found that", "shows that",
+    "官方确认", "官方报道", "报道声称", "报道中的直接主张", "页面显示", "可以确认",
+)
 
 
 def main() -> int:
@@ -26,9 +29,9 @@ def main() -> int:
 
     if not re.search(r"^#\s+", text, re.M):
         issues.append(("ERROR", 1, "missing report title"))
-    if not re.search(r"bottom line|executive summary|summary", text, re.I):
+    if not re.search(r"bottom line|executive summary|summary|结论|结论速览|直接结论|摘要", text, re.I):
         issues.append(("WARN", 1, "no conclusion-first summary section found"))
-    if "## Sources" not in text and "## References" not in text:
+    if not re.search(r"^##\s+.*(?:Sources|References|来源|参考资料|来源台账)", text, re.I | re.M):
         issues.append(("WARN", 1, "no Sources or References section found"))
 
     for line_no, line in enumerate(text.splitlines(), start=1):
@@ -45,6 +48,8 @@ def main() -> int:
             or stripped.startswith("```")
             or stripped.startswith("- **")
             or stripped.startswith("**As of:")
+            or stripped.startswith("**查证日期")
+            or stripped.startswith("**查证对象")
         ):
             continue
         has_link = bool(LINK_RE.search(line))

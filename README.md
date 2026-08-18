@@ -14,31 +14,27 @@ npx skills add OWNER/REPOSITORY --skill source-grounded-research
 
 For Codex, Claude Code, Cursor, GitHub Copilot, and other compatible agents, use the same repository source and select the target agent when prompted. The exact command depends on the final GitHub owner and repository name.
 
-## Try it
+## Choose the depth
+
+For a focused question:
 
 ```text
-Use Source-Grounded Research to compare public library digital-access programs in three regions. Define the comparison dimensions, prioritize primary sources, cite every material claim inline, separate facts from inferences, and state what the evidence cannot establish.
+Fact-check this claim. Use primary sources where possible, cite each material claim inline, and state what remains uncertain.
 ```
 
-It is also designed for prompts such as:
+For a complete report:
+
+```text
+Write a full research dossier in English. Include an executive summary, scope and method, subject profiles, an evidence chain or timeline, original evidence, comparison tables where useful, synthesis, limitations, and a complete source ledger. Verify every important link.
+```
+
+The skill can also handle:
 
 - “Fact-check this claim and show the original evidence.”
 - “Research the market and write a report for an executive decision.”
 - “Compare these products using current first-party documentation and independent tests.”
 - “Trace how a policy is implemented across institutions or jurisdictions.”
 - “Synthesize the literature on this topic and identify evidence gaps.”
-
-## Why this exists
-
-Many research answers are plausible but difficult to audit. Sources are often collected at the end, links are not checked, and interpretations are written as if they were facts.
-
-This skill makes a different promise:
-
-- every important claim has a nearby evidence trail;
-- source quality is matched to claim type;
-- facts, synthesis, inference, viewpoints, and unknowns are labeled separately;
-- links and source relevance are checked before delivery;
-- limitations are part of the result, not an afterthought.
 
 ## What it produces
 
@@ -56,7 +52,7 @@ Typical outputs include:
 - limitations and open questions;
 - a compact source ledger with complete links.
 
-## Example: the difference it makes
+## Examples
 
 The repository includes a reproducible example on public libraries and digital access:
 
@@ -64,6 +60,7 @@ The repository includes a reproducible example on public libraries and digital a
 - [evidence-first report with the skill](examples/public-libraries-digital-access/with-skill.md);
 - [side-by-side comparison](examples/public-libraries-digital-access/comparison.md);
 - [the benchmark prompt](examples/public-libraries-digital-access/prompt.md).
+- [a full current-affairs reference report](examples/reference-report-eu-ai-act-2026-08.md).
 
 The baseline is intentionally illustrative and should not be treated as a deliverable. The enhanced report shows the expected evidence discipline.
 
