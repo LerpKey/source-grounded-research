@@ -2,7 +2,7 @@
 
 > Answers can sound right while being impossible to audit. Source-Grounded Research turns research into a visible chain from claim to source to conclusion.
 
-Source-Grounded Research is an open Agent Skill for fact-finding, market research, public-interest analysis, policy research, comparisons, and evidence-aware report writing. It makes the research process more defensible without forcing every topic into a government or academic template.
+Source-Grounded Research is an open Agent Skill for fact-finding, market research, public-interest analysis, policy research, comparisons, due diligence, and evidence-aware report writing. It makes the research process more defensible without forcing every topic into a government, party, bureaucratic, or academic template.
 
 ## Install
 
@@ -42,13 +42,15 @@ This skill makes a different promise:
 
 ## What it produces
 
-Markdown is the default because it is portable, reviewable, and GitHub-friendly. HTML is available when a long report, timeline, visual comparison, or interactive presentation makes the result easier to understand.
+Markdown is the canonical format because it is portable, reviewable, easy to translate, and GitHub-friendly. A complete report does not require HTML. HTML is an optional companion when a long report, timeline, visual comparison, print layout, or interactive presentation makes the result easier to understand.
 
 Typical outputs include:
 
 - an executive summary and direct answer;
 - scope, definitions, and method;
-- evidence-backed findings;
+- evidence-backed profiles and findings;
+- an explicit evidence chain or timeline when the topic involves relationships, origins, authority, implementation, or change over time;
+- short original excerpts or precise document references for high-impact claims;
 - comparison tables with consistent dimensions;
 - a fact/inference/uncertainty synthesis;
 - limitations and open questions;

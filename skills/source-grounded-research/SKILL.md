@@ -7,6 +7,8 @@ description: "Produce auditable, evidence-first research and reports for public-
 
 Turn open-ended research into a visible chain from question to source to claim to conclusion.
 
+Write for an international audience in clear, neutral English. Explain local institutions, legal systems, organizations, and terminology instead of assuming that readers share the researcher’s national or professional context. Do not imitate party, government, bureaucratic, ceremonial, or advocacy-report language unless the user is explicitly analyzing that language.
+
 ## Operating contract
 
 - State the research question, scope, audience, date window, and key definitions before collecting evidence.
@@ -85,15 +87,37 @@ For the claim taxonomy and scoring rules, read [evidence-rubric.md](references/e
 - Report missing evidence and unresolved ambiguity as findings, not as empty space.
 - Avoid false precision. Preserve the source’s units, denominator, date, population, and confidence interval when relevant.
 
-### 6. Write the report
+### 6. Choose the report depth
 
-Use Markdown by default. Use HTML only when a long report, timeline, visual comparison, or interactive presentation materially improves comprehension.
+Use the user’s requested depth, not a fixed page count:
+
+- **Evidence answer:** Use for a focused question with a small number of claims. Give the direct answer, key evidence, and limitations.
+- **Full research dossier:** Use when the user asks for a full, comprehensive, detailed, formal, investigative, due-diligence, or research report. Preserve enough detail for a reader to audit the work without reopening the conversation.
+
+For a full dossier, include:
+
+1. title, research question, audience, scope, and “as of” date;
+2. conclusion summary with direct answers to the user’s questions;
+3. method, definitions, and source-selection logic;
+4. a profile for each entity, option, product, market, policy, or claim being investigated;
+5. an evidence chain showing origin, development, role, ownership, authority, implementation, or other topic-relevant relationships;
+6. original excerpts, data points, or document references for high-impact claims;
+7. comparison tables, timelines, or decision matrices when they clarify relationships;
+8. synthesis, implications, recommendations, and clearly labeled inferences;
+9. limitations, conflicting evidence, unknowns, and conditions that could change the conclusion;
+10. a complete source ledger with verified links.
+
+Adapt the profile and evidence-chain sections to the subject. For example, an organization may need identity, ownership, mandate, history, and current role; a product comparison may need specifications, pricing date, test conditions, and support lifecycle; a market study may need definitions, methodology, segments, competitors, and forecast assumptions.
+
+### 7. Write the report
+
+Use Markdown as the canonical output. It is portable, readable in GitHub and documentation systems, easy to diff, and not dependent on a browser or CSS. Offer HTML as an optional companion when the user requests it or when a long report, timeline, visual comparison, print layout, or interactive presentation materially improves comprehension. Do not require HTML for a complete report.
 
 Every material claim should have an inline citation close to the sentence or table cell it supports. Use the source’s descriptive title as the link text, not a bare URL. Keep a compact source ledger when the report has more than a few sources.
 
 Use [report-template.md](references/report-template.md) for the default structure.
 
-### 7. Validate before delivery
+### 8. Validate before delivery
 
 Run the relevant checks before calling the report complete:
 

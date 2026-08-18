@@ -1,6 +1,6 @@
 # Default Report Template
 
-Use this structure unless the user requests another format.
+Use this structure for a full research dossier unless the user requests another format. Write it in clear, neutral English for an international reader. Explain local terms and institutions on first use.
 
 ```markdown
 # [Research question]
@@ -15,6 +15,28 @@ Use this structure unless the user requests another format.
 - **Scope:** [Geography, population, products, organizations, or time window]
 - **Definitions:** [Terms that affect the result]
 - **Method:** [Search and source-selection approach]
+
+## Subject or option profiles
+
+### [Entity, option, product, market, policy, or claim A]
+
+- **Identity / definition:** [What it is]
+- **Relevant history or origin:** [Only if material to the question]
+- **Role, authority, ownership, or operating context:** [Topic-appropriate description]
+- **Key evidence:** [Inline links and short excerpts]
+
+### [Entity, option, product, market, policy, or claim B]
+
+- **Identity / definition:** [What it is]
+- **Relevant history or origin:** [Only if material to the question]
+- **Role, authority, ownership, or operating context:** [Topic-appropriate description]
+- **Key evidence:** [Inline links and short excerpts]
+
+## Evidence chain or timeline
+
+| Date or stage | Event, relationship, or change | Evidence | Confidence / limitation |
+|---|---|---|---|
+| [Date] | [What happened or how the relationship is established] | [Inline source link] | [Caveat] |
 
 ## Findings
 
@@ -47,4 +69,3 @@ Use this structure unless the user requests another format.
 ```
 
 Keep citations close to the claims they support. A source list at the end does not replace inline evidence links.
-
