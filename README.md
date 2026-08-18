@@ -76,7 +76,7 @@ The skill records the role and legal/media status of each node. Repeated article
 
 ## Validation snapshot
 
-The repository keeps the release package small. Full reports, prompts, comparisons, HTML demos, and benchmark artifacts are maintained locally and are intentionally excluded from Git.
+The repository keeps the release package small while publishing a curated set of Markdown results under [`docs/`](docs/). Raw prompts, without-skill baselines, side-by-side comparisons, private multilingual outputs, fixtures, and HTML demos remain local and are intentionally excluded from Git.
 
 Latest local validation included:
 
@@ -90,6 +90,14 @@ Latest local validation included:
 | Package checks | Skill format, Python compilation, strict report checks, chain checks, and live link checks passed |
 
 These results are a release snapshot, not a promise that future research will always produce the same conclusions. Re-run the local checks after changing the skill.
+
+### Public result reports
+
+- [Validation results and test matrix](docs/validation-results.md)
+- [UK Online Safety Act policy chain](docs/uk-online-safety-policy-chain.md)
+- [UK TikTok investigation news chain](docs/uk-tiktok-investigation-news-chain.md)
+- [Public libraries and digital access](docs/public-libraries-digital-access.md)
+- [EU AI Act transparency reference report](docs/eu-ai-act-reference-report.md)
 
 ## Compatibility and boundaries
 
@@ -107,7 +115,7 @@ python skills/source-grounded-research/scripts/validate_report.py path/to/report
 # For a policy or news chain, add --chain-type policy or --chain-type news.
 ```
 
-The full evaluation materials remain local during development so the public package is not padded with test reports or prompt artifacts.
+Raw evaluation materials remain local during development. The linked documents are selected, reproducible result reports intended to show how the skill handles different research shapes without publishing every prompt, baseline, or private test output.
 
 ## Contributing
 
