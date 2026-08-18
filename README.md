@@ -2,6 +2,8 @@
 
 > Answers can sound right while being impossible to audit. Source-Grounded Research turns research into a visible chain from claim to source to conclusion.
 
+Repository: [github.com/LerpKey/source-grounded-research](https://github.com/LerpKey/source-grounded-research)
+
 Source-Grounded Research is an open Agent Skill for fact-finding, market research, public-interest analysis, policy research, comparisons, due diligence, and evidence-aware report writing. It makes the research process more defensible without forcing every topic into a government, party, bureaucratic, or academic template.
 
 ## Install
@@ -11,10 +13,8 @@ Project name: **Source-Grounded Research**
 - Recommended repository name: `source-grounded-research`
 - Skill ID: `source-grounded-research`
 
-After publishing the repository to GitHub, replace `YOUR_GITHUB_USERNAME` with the account or organization that owns it:
-
 ```bash
-npx skills add YOUR_GITHUB_USERNAME/source-grounded-research --skill source-grounded-research
+npx skills add LerpKey/source-grounded-research --skill source-grounded-research
 ```
 
 For Codex, Claude Code, Cursor, GitHub Copilot, and other compatible agents, use the same repository source and select the target agent when prompted. The skill ID stays `source-grounded-research` even if you choose a different repository name.
