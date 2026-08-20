@@ -1,0 +1,38 @@
+{
+  "name": "source-grounded-research",
+  "version": "0.1.1",
+  "description": "Evidence-first fact-checking, policy, market, and academic research with auditable source chains.",
+  "author": {
+    "name": "LerpKey",
+    "url": "https://github.com/LerpKey"
+  },
+  "homepage": "https://github.com/LerpKey/source-grounded-research#readme",
+  "repository": "https://github.com/LerpKey/source-grounded-research",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "fact-checking",
+    "policy-research",
+    "market-research",
+    "academic-research",
+    "evidence-based-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Source-Grounded Research",
+    "shortDescription": "Evidence-first fact-checking, policy, and market research",
+    "longDescription": "Investigate claims, policies, products, markets, and academic questions with primary-source preference, inline evidence links, explicit uncertainty, and auditable research reports.",
+    "developerName": "LerpKey",
+    "category": "Research",
+    "capabilities": [
+      "Fact-checking",
+      "Evidence chains",
+      "Auditable reports"
+    ],
+    "defaultPrompt": [
+      "Use Source-Grounded Research to fact-check a claim with primary sources and inline evidence.",
+      "Use Source-Grounded Research to compare products or policies with a source ledger.",
+      "Use Source-Grounded Research to write an auditable research report with explicit uncertainties."
+    ]
+  }
+}
