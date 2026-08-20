@@ -1,5 +1,7 @@
 # Source-Grounded Research
 
+[![skills.sh](https://skills.sh/b/LerpKey/source-grounded-research)](https://skills.sh/LerpKey/source-grounded-research)
+
 > Answers can sound right while being impossible to audit. Source-Grounded Research turns research into a visible chain from claim to source to conclusion.
 
 Repository: [github.com/LerpKey/source-grounded-research](https://github.com/LerpKey/source-grounded-research)
